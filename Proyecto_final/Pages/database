@@ -1,0 +1,26 @@
+CREATE TABLE usuario (
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nombre varchar(25) NOT NULL,
+  apellidos varchar(25) NOT NULL,
+  correoElectronico varchar(50) NOT NULL,
+  contrasena varchar(25) NOT NULL,
+  rol varchar(15) NOT NULL,
+  agregado datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE pelicula (
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nombre varchar(25) NOT NULL,
+  descripcion mediumtext NOT NULL,
+  fechaDeEstreno varchar(25) NOT NULL,
+  directores varchar(25) NOT NULL,
+  recaudacion varchar(25) NOT NULL,
+  clasificacion varchar(10) NOT NULL,
+  duracion varchar(10) NOT NULL,
+  categoria varchar(25) NOT NULL,
+  presupuesto varchar(25) NOT NULL,
+  añoDeEstreno int NOT NULL,
+  vizualizaciones  INT,
+  status varchar(25) NOT NULL,
+  img varchar(15)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

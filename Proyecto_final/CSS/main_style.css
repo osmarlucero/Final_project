@@ -1,0 +1,142 @@
+Body{
+	Padding:0;
+	Margin:0;
+	background: black url(../Imagenes/main_back.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+bsody:before{
+	content: "rfedw";
+	width: 100%;
+	position: fixed;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);;
+}
+#container{
+	padding-top: 7%;
+		display: inline-flex;
+}
+
+#main{
+	background-color: #0f133e;
+    width: 69%;
+    margin: auto;
+    margin-top: 0%;
+    border-radius: 0.3rem;
+    margin-left: 23%;
+}
+    
+#main ul {
+	list-style: none;
+	padding-left: 0%;
+}
+#main ul li ul{
+	display: inline-flex;
+	width: 100%;
+}
+#main ul li ul li{
+	
+}
+.image_movie{
+	width: 62%;
+    margin: auto;
+    margin-top: 13%;
+}
+.image_desc{
+	width:100%;
+}
+.image_movie_container{
+	width: 30%;
+}
+.image_movie_text{
+    width: 40%;
+    box-sizing: border-box;
+    margin: 0% -3% 0% -4%;
+    padding: 4%;
+}
+.image_movie_info{
+	width: 30%;
+	box-sizing: border-box;
+    padding: 4%;
+}
+.image_desc{
+	width:100%;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+
+}
+.movie{
+	width: 20%;
+	display: inline-flex;
+	margin: 3% 1% 0% 3%;
+}
+.font_style{
+	 font-family:Elephant;
+	 color:#ffa903;
+}
+
+#sidebar{
+	width: 20%;
+	height: 100%;
+	position: fixed;
+	background-color: #0f133e;
+	margin-top: -0.78%;
+	box-shadow: 0 0.1875rem 1rem rgba(34,34,34,.74);
+	overflow: auto;
+}
+#categories{
+	width: 100%;
+}
+#categories ul{
+	display: inline-flex;
+	list-style: none;
+	margin-left: -10%;
+	border-bottom: 1px solid black;
+
+}
+.image_cat{
+	width: 20%;
+}
+.image_cat_inner{
+	width:100%;
+}
+.title_cat{
+	margin-left: 2%;
+	width: 40%;
+}
+.count_cat{
+	margin-left: 2%;
+	width: 40%;
+}
+::-webkit-scrollbar {
+  width: 0.333rem;
+}
+::-webkit-scrollbar-track {
+  background: #ffa903; 
+}
+::-webkit-scrollbar-thumb {
+  background: #04082b; 
+
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0e3fa9; 
+}
+.movie_inner{
+	display: inline-block;
+}
+.movie_info{
+	    margin-top: -2%;
+    background-color: #07128a;
+    padding: 0.5rem 0rem 0.5rem 0.5rem;
+	border-bottom: 4px solid rgba(0,0,0,0.1);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+#edit{
+	text-decoration: none;
+	display: none;
+}
+#title_recent{
+	text-align: center;
+}
