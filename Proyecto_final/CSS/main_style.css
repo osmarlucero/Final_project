@@ -25,6 +25,7 @@ bsody:before{
     margin-top: 0%;
     border-radius: 0.3rem;
     margin-left: 23%;
+    margin-bottom: 4%;
 }
     
 #main ul {
@@ -62,9 +63,8 @@ bsody:before{
 }
 .image_desc{
 	width:100%;
-	border-top-right-radius: 10px;
-	border-top-left-radius: 10px;
-
+	height:280px;
+	border-radius: 10px;
 }
 .movie{
 	width: 20%;
@@ -76,15 +76,7 @@ bsody:before{
 	 color:#ffa903;
 }
 
-#sidebar{
-	width: 20%;
-	height: 100%;
-	position: fixed;
-	background-color: #0f133e;
-	margin-top: -0.78%;
-	box-shadow: 0 0.1875rem 1rem rgba(34,34,34,.74);
-	overflow: auto;
-}
+
 #categories{
 	width: 100%;
 }
@@ -139,4 +131,16 @@ bsody:before{
 }
 #title_recent{
 	text-align: center;
+}
+#video{
+	padding-top: 4%;
+	padding-bottom:  4%;
+	width: 58%;
+	margin:auto;
+}
+#counter{
+	width: 41%;
+	height: 50%;
+	background-color: red;
+	position: absolute;
 }

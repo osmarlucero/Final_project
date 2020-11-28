@@ -22,16 +22,17 @@
 		</div>
 		<div id="header_menu">
 			<ul>
-				<li><a href="start_page.php" class=" font_style font_color">INICIO</a></li>
-				<li><a href="start_page.php" class=" font_style font_color">PELICULAS</a></li>
-				<li><a href="start_page.php" class=" font_style font_color">ESTRENOS</a></li>
-				<li><a href="start_page.php" class=" font_style font_color">CLASICOS</a></li>
-				<li><a href="start_page.php" class=" font_style font_color">4K</a></li>
-				<li><a href="start_page.php" class=" font_style font_color">TRAILERS</a></li>
-				<li><a href="start_page.php" class=" font_style font_color">T.V.</a></li>
+				<li><a href="start_page.php?name=Inicio" class=" font_style font_color">INICIO</a></li>
+				<li><a href="start_page.php?name=PELICULA" class=" font_style font_color">PELICULAS</a></li>
+				<li><a href="start_page.php?name=ESTRENOS" class=" font_style font_color">ESTRENOS</a></li>
+				<li><a href="start_page.php?name=CLASICOS" class=" font_style font_color">CLASICOS</a></li>
+				<li><a href="start_page.php?name=4K" class=" font_style font_color">4K</a></li>
+				<li><a href="start_page.php?name=TRAILERS" class=" font_style font_color">TRAILERS</a></li>
+				<li><a href="start_page.php?name=Serie" class=" font_style font_color">T.V.</a></li>
 			</ul>
 		</div>
 	</header>
+	
 </body>						
 
 </html>

@@ -16,6 +16,7 @@ bsody:before{
 #container{
 	padding-top: 7%;
 		display: inline-flex;
+		width: 100%;
 }
 #main{
 	    background-color: #0f133e;
@@ -27,6 +28,7 @@ bsody:before{
 }
 .image_desc{
 	width:100%;
+	height: 282px;
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
 
@@ -46,7 +48,7 @@ bsody:before{
 	height: 100%;
 	position: fixed;
 	background-color: #0f133e;
-	margin-top: -0.78%;
+	margin-top: -0.36%;
 	box-shadow: 0 0.1875rem 1rem rgba(34,34,34,.74);
 	overflow: auto;
 }

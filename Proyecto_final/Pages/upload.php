@@ -50,8 +50,18 @@
 					<img id="image" src="#" alt="Imagen de pelicula" />
 				</div>
 				<div id="form_add" class="font_style">
-					<form action="../app/categoryController.php" method="POST" id="add_form" >
-		                
+					<form action="../app/categoryController.php" method="POST" id="add_form" enctype="multipart/form-data" >
+		                <br>
+		                <br>
+		                <label>Tipo</label>
+		                <select name="contentType" class="style_form font_style_reverse">
+		                    <option>Pelicula</option>
+		                    <option>Serie</option>
+		                    <option>Trailers</option>
+		                    <option>4K</option>
+		                </select>
+		                <br>
+		                <br>
 		                <input type="text" name="name" placeholder="Nombre" required="" class="style_form font_style_reverse"> 
 		                <br>
 		                <textarea 		name="description" placeholder="Descripcion"  rows="5" required="" class="style_form font_style_reverse"></textarea>
@@ -62,17 +72,29 @@
 		                <br>
 		                <input type="text" name="found" placeholder="Recaudacion" required="" class="style_form font_style_reverse"> 
 		                <br>
-		                <input type="text" name="clasificacion" placeholder="Clasificacion" required="" class="style_form font_style_reverse"> 
-		                <br>
+		               
 		                <input type="text" name="duration" placeholder="Duracion" required="" class="style_form font_style_reverse"> 
 		                <br>
 		                <input type="text" name="categorie" placeholder="Categoria" required="" class="style_form font_style_reverse"> 
 		                <br>
 		                <input type="text" name="budget" placeholder="Presupuesto" required="" class="style_form font_style_reverse"> 
+		                <br> 
+		                <input type="text" name="link" placeholder="Link" required="" class="style_form font_style_reverse"> 
 		                <br>
 		                <input type="text" name="year" placeholder="Año de Estreno" required="" class="style_form font_style_reverse"> 
 		                <br>
-		                <input type="file" name="image"  onchange="readURL(this);" placeholder="Imagen Pelicula" accept="image/*"  class="style_form font_style_reverse"> 
+		                <input type="file" name="imageCover"  required="" onchange="readURL(this);" placeholder="Imagen Pelicula" accept="image/*"  class="style_form font_style_reverse"> 
+		                <br>
+		                <br>
+		                <label>Clasificacion</label>
+		                <select name="clasificacion" class="style_form font_style_reverse">
+		                    <option> A </option>
+		                    <option> B </option>
+		                    <option> B-15 </option>
+		                    <option> C </option>
+		                    <option> D </option>
+		                </select>
+		                <br>
 		                <br>
 		                <label>Status</label>
 		                <select name="status" class="style_form font_style_reverse">

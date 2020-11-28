@@ -1,0 +1,75 @@
+Body{
+	Padding:0;
+	Margin:0;
+	background: black url(../Imagenes/main_back.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+bsody:before{
+	content: "rfedw";
+	width: 100%;
+	position: fixed;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);;
+}
+
+.font_style{
+	 font-family:Elephant;
+	 color:#ffa903;
+}
+
+#sidebar{
+	width: 20%;
+	height: 100%;
+	position: fixed;
+	background-color: #0f133e;
+	margin-top: -0.38%;
+	box-shadow: 0 0.1875rem 1rem rgba(34,34,34,.74);
+	overflow: auto;
+}
+#categories{
+	width: 100%;
+}
+#categories ul{
+	display: inline-flex;
+	list-style: none;
+	margin-left: -10%;
+	border-bottom: 1px solid black;
+
+}
+.image_cat{
+	width: 20%;
+}
+.image_cat_inner{
+	width:100%;
+}
+.title_cat{
+	margin-left: 2%;
+	width: 40%;
+}
+.count_cat{
+	    margin-left: 13%;
+    width: 19%;
+}
+::-webkit-scrollbar {
+  width: 0.333rem;
+}
+::-webkit-scrollbar-track {
+  background: #ffa903; 
+}
+::-webkit-scrollbar-thumb {
+  background: #04082b; 
+
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0e3fa9; 
+}
+.link{
+	text-decoration:none;
+	margin-left: 33%;
+}
+.link:hover{
+	color: black;
+	transition: 0.2s;
+}
