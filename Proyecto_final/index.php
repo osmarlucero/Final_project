@@ -70,7 +70,7 @@
 						<!-- <button type="submit" class="font_style style_login button_style">
 								Iniciar Sesion
 						</button> -->
-						<a href="Pages/main.php" class="font_style style_login button_style">
+						<a href="Pages/start_page.php?name=Inicio" class="font_style style_login button_style">
 								Iniciar Sesion
 						</a>
 						<a href="#" class="font_style style_login button_style" onclick="muestraOculta()">
