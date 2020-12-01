@@ -3,7 +3,6 @@
 	include "../app/categoryController.php";
 	$categoryController = new categoryController();
 	$categories = $categoryController->getSidebar();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

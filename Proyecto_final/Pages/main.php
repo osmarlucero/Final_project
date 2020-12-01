@@ -34,7 +34,7 @@
                 var p =document.getElementById('counter');
                 p.style.display = "none"; 
                 views++;
-                event.preventDefault();
+                //event.preventDefault();
                 var add=document.getElementById('add').value = id;
                 var views=document.getElementById('views').value = views;
                 var rute ="add="+add+"&views="+views+"&action=add";

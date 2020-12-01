@@ -2,7 +2,7 @@
 	if (!isset($_SESSION)) {
     session_start();
 	}
-	include "connectionController.php";
+	include_once "connectionController.php";
 	if(isset($_POST['action'])){
 		$CategoryController = new CategoryController();
 		switch ($_POST['action']) {

@@ -9,12 +9,9 @@
      <link rel="shortcut icon" href="Imagenes/Blockbuster_logo.svg.png" />
      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="../app/jquery-3.5.1.min.js"></script>
-	    <script> 
-		    $(function(){
-		      $("#header").load("/pages/menu.php"); 
-		    });
-    	</script> 
+      <script src="app/jquery-3.5.1.min.js"></script>
+
+	   
        <script type="text/javascript">
             function muestraOculta() {
                 var p =document.getElementById('list_container');
@@ -42,7 +39,45 @@
                 	p.style.display = "block";  
                  }
            }  
+        </script>
+        <script type="text/javascript">
+           function Upload() {
+                //event.preventDefault();
+                var name=document.getElementById('name').value;
+                var lastName=document.getElementById('lastName').value;
+                var email=document.getElementById('email').value;
+                var pass=document.getElementById('pass').value;
+                var passCheck=document.getElementById('passCheck').value;
+                if(pass==passCheck){
+	                var rute ="name="+name+"&lastName="+lastName+"&email="+email+"&pass="+pass+"&action=store";
+	                $.ajax({
+	                	url:"app/userController.php",
+	                	type: 'POST',
+	                	data: rute,
+	                })
+	                .done(function(){
+	                	console.log("succes");
+	                })
+	                .fail(function(){
+	                	console.log("ERROR");
+	                })
+	                .always(function(){
+	                	console.log("complete");
+	                });
+	            	var name=document.getElementById('name').value = "";
+                	var lastName=document.getElementById('lastName').value="";
+                	var email=document.getElementById('email').value="";
+                	var pass=document.getElementById('pass').value="";
+                	var passCheck=document.getElementById('passCheck').value="";
+                	alert("Registro Realizado Exitosamente");
+            	}
+            	else
+            		alert("Las contraseñas no coinciden")
+
+                //document.getElementById('addForm').submit();
+           }
       
+        	
         </script>
 </head>
 <body>
@@ -55,7 +90,7 @@
 	<div id="container">
 		<!-- Inicio primer container-->
 		<div id="main">
-			<form action="../app/categoryController.php" method="POST">
+			<form action="app/categoryController.php" method="POST">
 
 				<div id="list_container">
 					<div class="title">
@@ -63,7 +98,7 @@
 					</div>
 					<ul>
 						<li><input type="text" placeholder="Email" id="user" class="style_login font_style" required></li>
-						<li><input type="password" placeholder="Contraseña" id="pass" class="style_login font_style" required></li>
+						<li><input type="password" placeholder="Contraseña" id="passs" class="style_login font_style" required></li>
 
 					</ul>
 					<div id="button_container">
@@ -79,18 +114,20 @@
 					</div>
 				</div>
 			</form>
-			<form action="../app/categoryController.php" method="POST">
+			<form action="app/userController.php">
 				<div id="container_register">
 					<div class="title">
 						<h2 class="font_title"> Registrate Para sentir la nostalgia.</h2>
 					</div>
 					<ul>
-						<li><input type="text" placeholder="Ingresa Tu Nombre" id="nameRegister" class="style_login font_style" required></li>
-						<li><input type="text" placeholder="Ingresa Tus Apellidos" id="lastNameRegister" class="style_login font_style" required></li>
-						<li><input type="text" placeholder="Ingresa Tu Email" id="emailRegister" class="style_login font_style" required></li>
-						<li><input type="password" placeholder="Ingresa Tu Contraseña" id="passRegister" class="style_login font_style" required></li>
-						<li><input type="password" placeholder="Confirma Tu Contraseña" id="passRegisterCheck" class="style_login font_style" required></li>
-						<li style="display: none;">
+						<li><input type="text" placeholder="Ingresa Tu Nombre" name="name" id="name" class="style_login font_style" required></li>
+						<li><input type="text" placeholder="Ingresa Tus Apellidos" name="lastName" id="lastName" class="style_login font_style" required></li>
+						<li><input type="text" placeholder="Ingresa Tu Email" name="email" id="email" class="style_login font_style" required></li>
+						<li><input type="password" placeholder="Ingresa Tu Contraseña" name="pass" id="pass" class="style_login font_style" required></li>
+						<li><input type="password" placeholder="Confirma Tu Contraseña" id="passCheck" class="style_login font_style" required></li>
+						<li style="display: block;">
+									                <input type="hidden" name="action" value="store">
+
 							<label>
                     			Status
                 			</label>
@@ -102,11 +139,11 @@
 
 					</ul>
 					<div id="button_container">
-						<button href="#" class="font_style style_login button_style">
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registrar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						</button>
 						<a href="#" class="font_style style_login button_style" onclick="regresoInicio()">
 								Regresar A Inicio
+						</a>
+						<a onclick="Upload()" href="#" class="font_style style_login button_style">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registrar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</a>
 					</div>
 				</div>
