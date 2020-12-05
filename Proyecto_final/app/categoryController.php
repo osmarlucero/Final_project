@@ -7,6 +7,7 @@
 		$CategoryController = new CategoryController();
 		switch ($_POST['action']) {
 			case 'store':
+				$name = strip_tags($_POST['name']);
 				$description = strip_tags($_POST['description']);
 				$date = strip_tags($_POST['date']);
 				$directors = strip_tags($_POST['directors']);
