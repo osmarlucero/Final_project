@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-12-2020 a las 13:30:05
+-- Tiempo de generación: 05-12-2020 a las 04:01:42
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.9
 
@@ -58,35 +58,11 @@ INSERT INTO `pelicula` (`id`, `nombre`, `descripcion`, `fechaDeEstreno`, `direct
 (7, 'Karate Kid', 'Daniel LaRusso llega a Los Ángeles dispuesto a hacer amigos, pero rápidamente se convierte en el blanco de los ataques de un grupo de estudiantes de karate. Por eso, le pide ayuda a Miyagi, un maestro de artes marciales que cambiará su vida.', '22 de junio de 1984 ', 'John G. Avildsen', '100 millones USD', 'B', '2h 7m', 'Juvenil', '8 millones USD', 1984, 11, 'Activo', '../Imagenes/Coverskkratekid.jpg', 'pelicula', 'CiFxNjMf5Bc'),
 (8, 'The Walking Dead', 'Basado en la historieta escrita por Robert Kirkman, este drama crudo describe las vidas de un grupo de sobrevivientes que está siempre en movimiento en busca de un hogar seguro durante las semanas y meses de un apocalipsis zombi. Sin embargo, la presión de estar con vida cada día, lleva a algunos del grupo a la crueldad profunda de cada ser humano y descubren que el miedo abrumador puede ser más mortal que los zombis que caminan a su alrededor. Los conflictos interpersonales pueden representar una amenaza mayor para su supervivencia que los caminantes que deambulan por las calles.', ' 31 de octubre de 2010', 'Robert Kirkman', '-', 'B-15', '45 Min', 'Suspenso', '-', 2010, 4, 'Activo', '../Imagenes/Covers6609111_so.jpg', 'Serie', 'cTw07vrJGIM'),
 (9, 'Jojo Rabbit', 'Durante la Segunda Guerra Mundial, un niño que pertenece a las Juventudes Hitlerianas descubre que su madre está ocultando en el ático de su casa a una niña judía. La concepción del mundo que tienen el pequeño y su amigo imaginario, Hitler, cambia por completo con la irrupción en sus vidas de la joven hebrea.', '24 de enero de 2020', 'Taika Waititi', '90.3 millones USD', 'B', '1h 48m', 'Belico', '14 millones USD', 2020, 6, 'Activo', '../Imagenes/Coversjojo-rabbit-1842475.jpg', 'Estreno', '9LMCzMHq9aE'),
-(10, 'Aquaman', 'Aquaman debe recuperar el legendario Tridente de Atlan para salvar a la ciudad subacuática de Atlantis, y al mundo de la superficie, de su hermano hambriento de poder.', '13 de diciembre de 2018', 'James Wan', '1.148 miles de millones U', 'B', '2h 22m', 'Fantasia', '$200 000 000', 2018, 0, 'Activo', '../Imagenes/Covers2cc1025ac8d10b86e53eaf3fa94270d5.jpg', '4K', '9Yam5B_iasY'),
+(10, 'Aquaman_', 'Aquaman debe recuperar el legendario Tridente de Atlan para salvar a la ciudad subacuática de Atlantis, y al mundo de la superficie, de su hermano hambriento de poder._', '13 de diciembre de 2018_', 'James Wan_', '1.148 miles de millones U', 'B_', '2h 22m_', 'Fantasia_', '$200 000 000_', 20188, 0, 'Activo', '../Imagenes/Covers2cc1025ac8d10b86e53eaf3fa94270d5.jpg', '4K_', '9Yam5B_iasY'),
 (11, 'Mujer Maravilla 1984', 'Diana Prince, conocida como Wonder Woman se enfrenta a Cheetah, una villana que posee fuerza y agilidad sobrehumanas.', '16 de diciembre de 2020', 'Patty Jenkins', '-', 'B', '2h 31m', 'Fantasia', '200 millones USD', 2020, 0, 'Activo', '../Imagenes/Coverswonder-woman-1984-poster.jpg', 'Trailers', 'XW2E2Fnh52w'),
-(12, 'La La Land', 'Sebastian, un pianista de jazz, y Mia, una aspirante a actriz, se enamoran locamente; pero la ambición desmedida que tienen por triunfar en sus respectivas carreras, en una ciudad como Los Ángeles, repleta de competencia y carente de piedad, pone en peligro su amor.', '9 de noviembre de 2016', 'Damien Chazelle', '447.4 millones USD', 'B', '2h 8m', 'Romance', '30 millones USD', 2018, 0, 'Activo', '../Imagenes/Covers3d97531c70164e1b1fb1ecc407e591a3.jpg', 'Pelicula', 'waTDxRZ93Qc'),
 (13, 'Saturday Night Fever', 'El empleado de una tienda de pintura de Brooklyn usa un traje blanco y se convierte en el rey de la disco local.', '13 de julio de 1978', 'John Badham', '237.1 millones USD', 'B-15', '1h 59m', 'Drama', '3.5 millones USD', 1978, 0, 'Activo', '../Imagenes/Covers10fdb7787ce4c1450b736ba3a7ae378e.jpg', 'Pelicula', 'RZTP586-Y9E'),
-(14, 'Cobra Kai', 'Treinta y cuatro años después de los eventos del torneo de karate All Valley de 1984, Johnny Lawrence busca la redención al abrir un dojo Cobra Kai, reavivando su rivalidad con un exitoso Daniel LaRusso.', '2 de mayo de 2018', '-', '-', 'B-15', '40 min/ ca', 'Accion', '-', 2018, 0, 'Activo', '../Imagenes/Covers71A0zlH-MJL._AC_SL1500_.jpg', 'Serie', '_rB36UGoP4Y');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuario`
---
-
-CREATE TABLE `usuario` (
-  `id` int(11) NOT NULL,
-  `nombre` varchar(25) NOT NULL,
-  `apellidos` varchar(25) NOT NULL,
-  `correoElectronico` varchar(50) NOT NULL,
-  `contrasena` varchar(25) NOT NULL,
-  `rol` varchar(15) DEFAULT NULL,
-  `agregado` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`id`, `nombre`, `apellidos`, `correoElectronico`, `contrasena`, `rol`, `agregado`) VALUES
-(4, 'root', 'root', 'root@gmail.com', 'root', NULL, '2020-12-01 04:21:50'),
-(6, 'admin', 'admin', 'admin', 'admin', NULL, '2020-12-01 04:24:38');
+(14, 'Cobra Kai', 'Treinta y cuatro años después de los eventos del torneo de karate All Valley de 1984, Johnny Lawrence busca la redención al abrir un dojo Cobra Kai, reavivando su rivalidad con un exitoso Daniel LaRusso.', '2 de mayo de 2018', '-', '-', 'B-15', '40 min/ ca', 'Accion', '-', 2018, 4, 'Activo', '../Imagenes/Covers71A0zlH-MJL._AC_SL1500_.jpg', 'Serie', '_rB36UGoP4Y'),
+(16, 'jordyMalaCopa', '			                	Un mapache oportunista enseña a los otros animales sobre los tesoros comestibles que los nuevos humanos del vecindario dejan fuera de sus casas.			                ', '12/12/2020', 'i', 'inj', 'A', 'oijoij', 'oojo|joj', 'ojojoj', 250055, 0, 'Activo', '../Imagenes/Coversjordymalacopa.png', 'Pelicula', 'ojojojojojojoj');
 
 --
 -- Índices para tablas volcadas
@@ -99,12 +75,6 @@ ALTER TABLE `pelicula`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -112,13 +82,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `pelicula`
 --
 ALTER TABLE `pelicula`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT de la tabla `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

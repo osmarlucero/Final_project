@@ -75,7 +75,6 @@ bsody:before{
     background-color: #ffa903;
 }
 .font_style_reverse{
-	font-family: Elephant;
 	color:#0e3fa9;
 }
 .font_style_reverse::placeholder {

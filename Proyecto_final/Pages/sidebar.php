@@ -30,7 +30,7 @@
 						<ul>
 							<li class="image_cat"><img src="../Imagenes/Blockbuster_logo.svg.png" class="image_cat_inner"></li>
 										
-							<li class="font_style title_cat"><a href="start_page.php?name=<?= $category['categoria'] ?>" class=" font_style font_color link"><?= $category['categoria'] ?>
+							<li class="font_style title_cat"><a href="index.php?name=<?= $category['categoria'] ?>" class=" font_style font_color link"><?= $category['categoria'] ?>
 								
 							</a> </li>
 							<li class="font_style count_cat">

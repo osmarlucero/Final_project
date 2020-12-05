@@ -34,6 +34,11 @@ Body{
 	text-decoration: none;
 }
 .font_style{
-	 font-family:Elephant;
 	 color:#ffa903;
+}
+#logout{
+    outline: none;
+    background-color: transparent;
+    border-color: transparent;
+    text-decoration: none;
 }

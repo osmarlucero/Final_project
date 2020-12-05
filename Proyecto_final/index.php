@@ -8,6 +8,7 @@
      <title>Blockbuster</title>
      <link rel="shortcut icon" href="Imagenes/Blockbuster_logo.svg.png" />
      <meta charset="UTF-8">
+     <meta http-equiv =»Cache-Control» content =»no-cache»/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="app/jquery-3.5.1.min.js"></script>
 
@@ -76,8 +77,7 @@
 
                 //document.getElementById('addForm').submit();
            }
-      
-        	
+          
         </script>
 </head>
 <body>
@@ -90,24 +90,26 @@
 	<div id="container">
 		<!-- Inicio primer container-->
 		<div id="main">
-			<form action="app/categoryController.php" method="POST">
+			<form action="app/authController.php" method="POST">
 
 				<div id="list_container">
 					<div class="title">
 						<h2 class="font_title"> Iniciar Sesion.</h2>
 					</div>
 					<ul>
-						<li><input type="text" placeholder="Email" id="user" class="style_login font_style" required></li>
-						<li><input type="password" placeholder="Contraseña" id="passs" class="style_login font_style" required></li>
+						<li><input type="text" name="emailLog"placeholder="Email" id="user" class="style_login font_style" required></li>
+						<li><input type="password" name="passLog" placeholder="Contraseña" id="passs" class="style_login font_style" required></li>
 
 					</ul>
 					<div id="button_container">
-						<!-- <button type="submit" class="font_style style_login button_style">
+						<input type="hidden" name="access" value="login">
+						
+						<!--<a href="Pages/start_page.php?name=Inicio" class="font_style style_login button_style">
 								Iniciar Sesion
-						</button> -->
-						<a href="Pages/start_page.php?name=Inicio" class="font_style style_login button_style">
+						</a> -->
+						<button type="submit" class="font_style style_login button_style">
 								Iniciar Sesion
-						</a>
+						</button>
 						<a href="#" class="font_style style_login button_style" onclick="muestraOculta()">
 								No tengo cuenta, Registrarme
 						</a>
@@ -128,12 +130,9 @@
 						<li style="display: block;">
 									                <input type="hidden" name="action" value="store">
 
-							<label>
-                    			Status
-                			</label>
-                			<select name="status">
-                    			<option> Admin </option>
+				    			<select style="display: none;" name="status">
                     			<option> Cliente </option>
+                    			<option> Admin </option>
                 			</select>
             			</li>
 

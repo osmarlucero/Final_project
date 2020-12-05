@@ -6,6 +6,10 @@
 	$categories = $categoryController->getMovie($_GET['id']);
 	$nameMovie = $categoryController->getName($_GET['id']);
 	$page_title = $nameMovie;
+
+	if(isset($_SESSION)==false || $_SESSION['id']==false){
+		header("Location:../");
+	}
 ?>
 
 <!DOCTYPE html>
@@ -75,6 +79,9 @@
 			<ul>
 				<li>
 					<ul class="font_style">
+						<?php if ($_SESSION['rol']=="admin"): ?>
+							<li style="position: fixed; padding-left: 5%;"><a href="edit.php?id=<?php echo $_GET['id']; ?>"" class=" font_style font_color">EDITAR</a></li>
+						<?php endif ?>
 						<li class="image_movie_container"><div class="image_movie"><img class="image_desc" src=" <?= $category['portada'] ?>"></div></li>
 						<li class="image_movie_text">
 							<div class="title"><?= $category['nombre'] ?></div>
@@ -90,6 +97,7 @@
 								<p class="founded">Recaudación: <?= $category['recaudacion'] ?></p>
 								<p class="year">Año: <?= $category['añoDeEstreno'] ?></p>
 								<p class="budget">Presupuesto: <?= $category['presupuesto'] ?></p>
+								<p class="budget">Vizualizaciones: <?= $category['vizualizaciones'] ?></p>
 																
 							</div>
 						</li>
@@ -113,6 +121,7 @@
 		<script>
 			$('#counter')
 		</script>
+		
 	</div>
 </body>						
 

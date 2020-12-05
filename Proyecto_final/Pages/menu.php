@@ -1,5 +1,12 @@
-<?php 
+
+<?php
+
+	include "../app/categoryController.php";
+	if(isset($_SESSION)==false){
+		header("Location:../");
+	}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +30,24 @@
 		</div>
 		<div id="header_menu">
 			<ul>
-				<li><a href="start_page.php?name=Inicio" class=" font_style font_color">INICIO</a></li>
-				<li><a href="start_page.php?name=PELICULA" class=" font_style font_color">PELICULAS</a></li>
-				<li><a href="start_page.php?name=ESTRENOS" class=" font_style font_color">ESTRENOS</a></li>
-				<li><a href="start_page.php?name=CLASICOS" class=" font_style font_color">CLASICOS</a></li>
-				<li><a href="start_page.php?name=4K" class=" font_style font_color">4K</a></li>
-				<li><a href="start_page.php?name=TRAILERS" class=" font_style font_color">TRAILERS</a></li>
-				<li><a href="start_page.php?name=Serie" class=" font_style font_color">T.V.</a></li>
-			</ul>
+				<li><a href="index.php?name=Inicio" class=" font_style font_color">INICIO</a></li>
+				<li><a href="index.php?name=PELICULA" class=" font_style font_color">PELICULAS</a></li>
+				<li><a href="index.php?name=ESTRENOS" class=" font_style font_color">ESTRENOS</a></li>
+				<li><a href="index.php?name=CLASICOS" class=" font_style font_color">CLASICOS</a></li>
+				<li><a href="index.php?name=4K" class=" font_style font_color">4K</a></li>
+				<li><a href="index.php?name=TRAILERS" class=" font_style font_color">TRAILERS</a></li>
+				<li><a href="index.php?name=Serie" class=" font_style font_color">T.V.</a></li>
+				<?php if ($_SESSION['rol']=="admin"): ?>
+				<li><a href="upload.php" class=" font_style font_color">UPLOAD</a></li>
+				<?php endif ?>
+				<li>
+					<form action="../app/authController.php" method="POST">
+						<input type="hidden" name="access" value="logout">
+						<button type="submit" id="logout" class=" font_style font_color">LOGOUT
+						</button>
+					</form>
+				</li>
+
 		</div>
 	</header>
 	

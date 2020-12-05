@@ -7,7 +7,6 @@
 		$CategoryController = new CategoryController();
 		switch ($_POST['action']) {
 			case 'store':
-				$name = strip_tags($_POST['name']);
 				$description = strip_tags($_POST['description']);
 				$date = strip_tags($_POST['date']);
 				$directors = strip_tags($_POST['directors']);
@@ -34,12 +33,29 @@
 			break;
 			case 'update':
 				$name = strip_tags($_POST['name']);
-				$description = strip_tags($_POST['description']);
-				$status = strip_tags($_POST['status']);
 				$id = strip_tags($_POST['id']);
-				$CategoryController->update($id, $name, $description, $status);
+				$description = strip_tags($_POST['description']);
+				$date = strip_tags($_POST['date']);
+				$directors = strip_tags($_POST['directors']);
+				$duration = strip_tags($_POST['duration']);
+				$categorie = strip_tags($_POST['categorie']);
+				$budget = strip_tags($_POST['budget']);
+				$found = strip_tags($_POST['found']);
+				$year = strip_tags($_POST['year']);
+				$link = strip_tags($_POST['link']);
+				$CategoryController->update($id,
+					$name,
+					$description,
+					$date,
+					$directors,
+					$duration,
+					$categorie,
+					$budget,
+					$found,
+					$year,
+					$link);
 			break;
-			case 'delete':
+			case 'deleteThis':
 				$id = strip_tags($_POST['id']);
 				$CategoryController->delete($id);
 			break;
@@ -83,18 +99,31 @@
 			}
 
 		}
-		public function update($id, $name, $description, $status){
+		public function update(
+					$id,
+					$name,
+					$description,
+					$date,
+					$directors,
+					$duration,
+					$categorie,
+					$budget,
+					$found,
+					$year,
+					$link){
 			$conn = connect();
 			if ($conn->connect_error==false){
-				if($id!=""&&$name!="" &&$description!=""&&$status!=""){
-					$query="update categories set name=?,description = ?, status=? where id=?";
+				if($id!=""&&$name!="" &&$description!=""){
+					$query="update pelicula SET nombre = ? , descripcion = ?, fechaDeEstreno = ?, directores = ?, duracion=?, recaudacion = ?,
+					 categoria = ?, presupuesto = ?, añoDeEstreno = ?, link=? where id=?";
 					$prepared_query = $conn->prepare($query);
-					$prepared_query->bind_param('sssi',$name, $description, $status, $id);
+					$prepared_query->bind_param('ssssssssisi',	$name, $description, $date,	$directors,	$duration,	$found,	$categorie,
+					$budget,	$year,$link,$id);
 					if($prepared_query->execute()){
-						header("Location:".$_SERVER["HTTP_REFERER"]);
+							header("Location:../Pages/index.php?name=Inicio");
 					}
 					else
-						header("Location:".$_SERVER["HTTP_REFERER"]);
+							header("Location:../Pages/index.php?name=Inicio?ERROR");
 
 				}
 			}
@@ -105,11 +134,11 @@
 			$conn = connect();
 			if ($conn->connect_error==false){
 				if($id!=""){
-					$query="delete from categories where id=?";
+					$query="delete from pelicula where id=?";
 					$prepared_query = $conn->prepare($query);
 					$prepared_query->bind_param('i',$id);
 					if($prepared_query->execute()){
-						header("Location:".$_SERVER["HTTP_REFERER"]);
+						header("Location:../Pages/index.php?name=Inicio");
 					}
 					else
 						header("Location:".$_SERVER["HTTP_REFERER"]);
@@ -119,7 +148,7 @@
 			else
 				header("Location:".$_SERVER["HTTP_REFERER"]);
 		}
-		public function add($id, $views){
+	public function add($id, $views){
 			$conn = connect();
 			if ($conn->connect_error==false){
 				if($id!=""&&$views!=""){

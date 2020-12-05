@@ -1,4 +1,15 @@
+<?php
 
+	include "../app/categoryController.php";
+	$categoryController = new categoryController();
+	$categories = $categoryController->getMovie($_GET['id']);
+	$nameMovie = $categoryController->getName($_GET['id']);
+	$page_title = $nameMovie;
+
+	if(isset($_SESSION)==false || $_SESSION['id']==false){
+		header("Location:../");
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,46 +52,65 @@
 	<div id="container">
 		<!-- Inicio primer container-->
 			
-		<div id="main">
-			<div id="title_recent" class="font_style">
-				<h2 id="categorie">Editar Pelicula/Serie</h2>
-			</div>		
-			<div id="sub_container">
-				<div id="image_preview">
-					<img id="image" src="#" alt="Imagen de pelicula" />
+		<?php foreach ($categories as $category): ?>
+			<div id="main">
+				<div id="title_recent" class="font_style">
+					<h2 id="categorie">Agregar Pelicula/Serie</h2>
+				</div>		
+				<div id="sub_container">
+					<div style="width: 30%; height:1rem;border:none;" id="image_preview">
+						<img style="width: 100%;" id="image" src="<?= $category['portada']?>" alt="Imagen de pelicula" />
+					</div>
+					<div id="form_add" class="font_style">
+						<form action="../app/categoryController.php" method="POST" id="add_form" enctype="multipart/form-data" >
+			                <br>
+			                <br>
+			                <input type="text" name="name" placeholder="Nombre" required="" class="style_form font_style_reverse"
+			                	value="<?= $category['nombre'] ?>"> 
+			                <br>
+			                <textarea  name="description" placeholder="Descripcion"  rows="5" required="" class="style_form font_style_reverse">
+			                	<?= $category['descripcion']?>
+			                </textarea>
+			                <br>
+			                <input value="<?= $category['fechaDeEstreno']?>" type="text" name="date" placeholder="Fecha De Estreno" required="" class="style_form font_style_reverse"> 
+			                <br>
+			                <input value="<?= $category['directores']?>"type="text" name="directors" placeholder="Directores" required="" class="style_form font_style_reverse"> 
+			                <br>
+			                <input value="<?= $category['recaudacion']?>" type="text" name="found" placeholder="Recaudacion" required="" class="style_form font_style_reverse"> 
+			                <br>
+			               
+			                <input value="<?= $category['duracion']?>"type="text" name="duration" placeholder="Duracion" required="" class="style_form font_style_reverse"> 
+			                <br>
+			                <input value="<?= $category['categoria']?>" type="text" name="categorie" placeholder="Categoria" required="" class="style_form font_style_reverse"> 
+			                <br>
+			                <input  value="<?= $category['presupuesto']?>"type="text" name="budget" placeholder="Presupuesto" required="" class="style_form font_style_reverse"> 
+			                <br> 
+			                <input value="<?= $category['link']?>" type="text" name="link" placeholder="Link" required="" class="style_form font_style_reverse"> 
+			                <br>
+			                <input value="<?= $category['añoDeEstreno']?>"type="text" name="year" placeholder="Año de Estreno" required="" class="style_form font_style_reverse"> 
+			                <br>
+			                <input value="<?= $category['id']?>" type="hidden" name="id" placeholder="Link" required="" class="style_form font_style_reverse"> 
+			               
+			                <br>
+			                <br>
+			                
+			                <br>
+			                <button type="submit" class="style_form font_style_reverse"> 
+			                Subir Pelicula/Serie</button>
+			                <input type="hidden" name="action" value="update">
+			        	</form>
+			        	<form action="../app/categoryController.php" method="POST" id="add_form" enctype="multipart/form-data" >
+			                <input type="hidden" name="action" value="deleteThis"> 
+			                <input type="hidden" name="id" value="<?= $category['id']?>"> 
+			        		<button type="submit" class="style_form font_style_reverse"> 
+				                Eliminar Pelicula/Serie
+				            </button>
+						</form>
+
+		        	</div>
 				</div>
-				<div id="form_add" class="font_style">
-					<form action="../app/categoryController.php" method="POST" id="add_form" >
-		                
-		                <input type="text" name="name" placeholder="Nombre" required="" class="style_form font_style_reverse"> 
-		                <br>
-		                <textarea placeholder="Descrition" name="descrition" rows="5" required="" class="style_form font_style_reverse"></textarea>
-		                <br>
-		                <input type="text" name="date" placeholder="Fecha De Estreno" required="" class="style_form font_style_reverse"> 
-		                <br>
-		                <input type="text" name="directors" placeholder="Directores" required="" class="style_form font_style_reverse"> 
-		                <br>
-		                <input type="text" name="found" placeholder="Recaudacion" required="" class="style_form font_style_reverse"> 
-		                <br>
-		                <input type="text" name="year" placeholder="Año De Estreno" required="" class="style_form font_style_reverse"> 
-		                <br>
-		                <input type="text" name="budget" placeholder="Presupuesto" required="" class="style_form font_style_reverse"> 
-		                <br>
-		                <input type="file" name="image"  onchange="readURL(this);" placeholder="Imagen Pelicula" accept="image/*" required="" class="style_form font_style_reverse"> 
-		                <br>
-		                <label>Status</label>
-		                <select name="status" class="style_form font_style_reverse">
-		                    <option> Activo </option>
-		                    <option> Inactivo </option>
-		                </select>
-		                <br>
-		                <button type="submit" class="style_form font_style_reverse"> 
-		                Editar Pelicula/Serie</button>
-		                <input type="hidden" name="action" value="store">
-		        	</form>
-	        	</div>
-		</div>
-	</div>
+			</div>
+		<?php endforeach ?>
 
 	</div>
 </body>						

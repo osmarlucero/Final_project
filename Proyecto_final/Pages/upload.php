@@ -1,4 +1,13 @@
 
+<?php
+		
+	include "../app/categoryController.php";
+	$categoryController = new categoryController();
+	if(isset($_SESSION)==false|| $_SESSION['rol']!="admin"){
+		header("Location:../Pages/index.php?name=Inicio");
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +17,6 @@
 	<link rel="StyleSheet" href= "../CSS/menu.css?v=0.0.2" />
      <title>Blockbuster - Cargar</title>
      <link rel="shortcut icon" href="../Imagenes/Blockbuster_logo.svg.png" />
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="../app/jquery-3.5.1.min.js"></script>
@@ -16,7 +24,6 @@
 		    $(function(){
 		      $("#header").load("menu.php"); 
 		    });
-
 		    function readURL(input) {
   				if (input.files && input.files[0]) {
     			var reader = new FileReader();
@@ -109,8 +116,6 @@
 	        	</div>
 		</div>
 	</div>
-
 	</div>
 </body>						
-
 </html>
