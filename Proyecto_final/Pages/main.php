@@ -1,7 +1,7 @@
 
 <?php
 
-	include "../app/categoryController.php";
+	/*include "../app/categoryController.php";
 	$categoryController = new categoryController();
 	$categories = $categoryController->getMovie($_GET['id']);
 	$nameMovie = $categoryController->getName($_GET['id']);
@@ -9,7 +9,7 @@
 
 	if(isset($_SESSION)==false || $_SESSION['id']==false){
 		header("Location:../");
-	}
+	}*/
 ?>
 
 <!DOCTYPE html>
